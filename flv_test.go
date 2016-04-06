@@ -1,4 +1,4 @@
-package flv
+package flv_test
 
 import (
 	"testing"

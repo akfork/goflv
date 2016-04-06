@@ -63,11 +63,11 @@ func OpenFile(name string) (flvFile *File, err error) {
 	}
 
 	var size int64
-	if size, err = file.Seek(0, 2); err != nil {
+	if size, err = file.Seek(0, os.SEEK_END); err != nil {
 		file.Close()
 		return
 	}
-	if _, err = file.Seek(0, 0); err != nil {
+	if _, err = file.Seek(0, os.SEEK_SET); err != nil {
 		file.Close()
 		return
 	}
